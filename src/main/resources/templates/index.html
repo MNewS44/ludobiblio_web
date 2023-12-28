@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de votre LudoBibliothèque</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+</head>
+<body>
+<div id="entete">
+<h1 class="titre">Bienvenu(e) dans la page de gestion de votre Ludo<span class="biblio">Biblio</span>thèque</h1>
+</div>
+<div id="main">
+    <div id="menu">
+    <h2 class="actions">Actions disponibles :</h2>
+        <ul>
+            <li><a class="lien" href="comic/create-form-book">Ajout d'un livre</a></li>
+        </ul>
+        <ul>
+            <li><a class="lien" href="game/create-form-game">Ajout d'un jeu</a></li>
+        </ul>
+    </div>
+    <div id="contenu">
+        <section class="container">
+            <div class="left-half">
+                <p class="listComic">Liste des BD</p>
+                <article id="comic-list">
+
+                </article>
+            </div>
+            <div class="right-half">
+                <p class="detailComic">Détail d'une BD</p>
+                <article id="comic-detail">
+
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="left-half">
+                <p class="listGame">Liste des jeux</p>
+                <article id="game-list">
+
+                </article>
+            </div>
+            <div class="right-half">
+                <p class="detailGame">Détail d'un jeu</p>
+                <article id="game-detail">
+
+                </article>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="footer">
+
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

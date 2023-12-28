@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail du livre</title>
+</head>
+<body>
+<p>
+    Titre : <span th:text="${comic.title}"/>
+</p>
+<p>
+    A partir de : <span th:text="${comic.ageMin}"/> ans
+</p>
+<p>
+    Résumé : <span th:text="${comic.resume}"/>
+</p>
+
+</body>
+</html>

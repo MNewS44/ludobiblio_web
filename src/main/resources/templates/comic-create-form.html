@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion de votre LudoBibliothèque</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="entete">
+<h1 class="titre">Bienvenu(e) dans la page de gestion de votre Ludo<span class="biblio">Biblio</span>thèque</h1>
+</div>
+<div id="main">
+    <div id="menu">
+    <h2 class="actions">Actions disponibles :</h2>
+        <ul>
+            <li><a class="lien" href="index.html">Retour à l'accueil</a></li>
+        </ul>
+    </div>
+    <div id="global">
+        <p class="addComic">Ajout d'une BD</p>
+        <form th:action="@{/comic/create}" method="POST" th:object=${comicForm}>
+            <div id="left">
+                <p> Titre*</p>
+                <p> Tome</p>
+                <p> Sous-titre</p>
+                <p> Auteur</p>
+                <p> Editeur</p>
+                <p> Illustrateur</p>
+                <p> Année de publication</p>
+                <p> Style</p>
+                <p> Age minimal</p>
+                <p> Image</p>
+                <p> Résumé</p>
+                <input type="submit" value="Enregistrer"/>
+            </div>
+            <div id="right">
+                <p><input class="inputText" type="text" field="*{title}" name="title"/></p>
+                <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: red"></div>
+                <p><input class="inputText"  type="text" field="*{tome}" name="tome"/></p>
+                <div th:if="${#fields.hasErrors('tome')}" th:errors="*{tome}"></div>
+                <p><input class="inputText"  type="text" field="*{subtitle}" name="subtitle"/></p>
+                <div th:if="${#fields.hasErrors('subtitle')}" th:errors="*{subtitle}"></div>
+                <p><input class="inputText" type="text" field="*{idAuthor}" name="idAuthor"/></p>
+                <div th:if="${#fields.hasErrors('idAuthor')}" th:errors="*{idAuthor}"></div>
+                <p><input class="inputText" type="text" field="*{idEditor}" name="idEditor"/></p>
+                <div th:if="${#fields.hasErrors('idEditor')}" th:errors="*{idEditor}"></div>
+                <p><input class="inputText" type="text" field="*{idIllustrator}" name="idIllustrator"/></p>
+                <div th:if="${#fields.hasErrors('idIllustrator')}" th:errors="*{idIllustrator}"></div>
+                <p><input class="inputText" type="text" field="*{publicationYear}" name="publicationYear"/></p>
+                <div th:if="${#fields.hasErrors('publicationYear')}" th:errors="*{publicationYear}"></div>
+                <p><input class="inputText" type="text" field="*{style}" name="style"/></p>
+                <div th:if="${#fields.hasErrors('style')}" th:errors="*{style}"></div>
+                <p><input class="inputText" type="text" field="*{ageMin}" name="ageMin"/></p>
+                <div th:if="${#fields.hasErrors('ageMin')}" th:errors="*{ageMin}"></div>
+                <p><input class="inputText" type="text" field="*{pathImage}" name="pathImage"/></p>
+                <div th:if="${#fields.hasErrors('pathImage')}" th:errors="*{pathImage}"></div>
+                <p><input class="inputText" type="text" field=="*{resume}" name="resume"></p>
+                <div th:if="${#fields.hasErrors('resume')}" th:errors="*{resume}"></div>
+            </div>
+            <div></div>
+        </form>
+    </div>
+</div>
+<div id="footer">
+
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
